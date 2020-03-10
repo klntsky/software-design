@@ -1,6 +1,7 @@
 package main.java.ru.ifmo.mit.repl.parse;
 
 import main.java.ru.ifmo.mit.repl.command.Command;
+import main.java.ru.ifmo.mit.repl.command.CommandExecutable;
 import main.java.ru.ifmo.mit.repl.command.CommandFactory;
 import main.java.ru.ifmo.mit.repl.parse.token.Token;
 
@@ -43,7 +44,7 @@ public final class ShellParser implements Parser {
         return arguments;
     }
 
-    private Command parseCommand(List<Token> tokens) {
+    private CommandExecutable parseCommand(List<Token> tokens) {
         Token commandName = tokens.get(currentToken++);
         if (currentToken == tokens.size()) {
             return commandFactory.makeCommand(commandName.getString(), List.of());
@@ -59,9 +60,9 @@ public final class ShellParser implements Parser {
     }
 
     @Override
-    public Command parse(List<Token> tokens) {
+    public CommandExecutable parse(List<Token> tokens) {
         currentToken = 0;
-        List<Command> commands = new ArrayList<>();
+        List<CommandExecutable> commands = new ArrayList<>();
 
         while (currentToken < tokens.size()) {
             var command = parseCommand(tokens);

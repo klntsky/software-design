@@ -24,6 +24,8 @@ public final class IOController {
         printStream.print(string);
     }
 
+    public void println(String string) { printStream.println(string); }
+
     public Optional<String> readLine() {
         try {
             return Optional.ofNullable(scanner.nextLine());

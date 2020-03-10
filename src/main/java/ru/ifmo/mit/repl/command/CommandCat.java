@@ -15,7 +15,7 @@ public class CommandCat extends Command {
 
     private void executeWithoutArguments(InputStream input, OutputStream output) {
         Scanner scanner = new Scanner(input);
-        PrintWriter writer = new PrintWriter(output, true);
+        PrintWriter writer = new PrintWriter(output);
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             writer.println(line);

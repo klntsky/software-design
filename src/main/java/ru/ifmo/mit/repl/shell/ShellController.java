@@ -26,11 +26,11 @@ public class ShellController implements Controller {
         var line = ioController.readLine();
         while (line.isPresent()) {
             var tokens = lexer.parse(line.get());
-            var command = parser.parse(tokens);
             try {
+                var command = parser.parse(tokens);
                 command.execute(ioController.getInputStream(), ioController.getOutputStream());
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                ioController.println(e.getLocalizedMessage());
             }
 
             ioController.print(PROMPT);

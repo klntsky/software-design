@@ -15,40 +15,43 @@ public class CommandFactoryImpl extends CommandFactory {
     }
 
     @Override
-    public Command makeAssignCommand(List<String> arguments) {
+    public CommandExecutable makeAssignCommand(List<String> arguments) {
         return new CommandAssign(arguments, context);
     }
 
     @Override
-    public Command makeCatCommand(List<String> arguments) {
+    public CommandExecutable makeCatCommand(List<String> arguments) {
         return new CommandCat(arguments);
     }
 
     @Override
-    public Command makeEchoCommand(List<String> arguments) {
+    public CommandExecutable makeEchoCommand(List<String> arguments) {
         return new CommandEcho(arguments);
     }
 
     @Override
-    public Command makeExternalCommand(List<String> arguments) {
+    public CommandExecutable makeExternalCommand(List<String> arguments) {
         return new CommandExternal(arguments);
     }
 
     @Override
-    public Command makePipeCommand(List<Command> commands) {
+    public CommandExecutable makePipeCommand(List<CommandExecutable> commands) {
         return new CommandPipe(commands);
     }
 
     @Override
-    public Command makePwdCommand(List<String> arguments) {
+    public CommandExecutable makePwdCommand(List<String> arguments) {
         return new CommandPWD(arguments);
     }
 
     @Override
-    public Command makeWCCommand(List<String> arguments) {
+    public CommandExecutable makeWCCommand(List<String> arguments) {
         return new CommandWC(arguments);
     }
 
     @Override
-    public Command makeExitCommand(List<String> arguments) { return new CommandExit(arguments); }
+    public CommandExecutable makeExitCommand(List<String> arguments) { return new CommandExit(arguments); }
+
+    @Override
+    public CommandExecutable makeGrepCommand(List<String> arguments) { return new CommandGrep(arguments); }
 }

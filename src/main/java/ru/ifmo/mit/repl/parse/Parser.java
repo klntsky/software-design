@@ -1,6 +1,6 @@
 package main.java.ru.ifmo.mit.repl.parse;
 
-import main.java.ru.ifmo.mit.repl.command.Command;
+import main.java.ru.ifmo.mit.repl.command.CommandExecutable;
 import main.java.ru.ifmo.mit.repl.parse.token.Token;
 
 import java.util.List;
@@ -12,5 +12,5 @@ public interface Parser {
     /*
         Создает команду на основе последовательности токенов, поданных на вход.
      */
-    Command parse(List<Token> tokens);
+    CommandExecutable parse(List<Token> tokens);
 }

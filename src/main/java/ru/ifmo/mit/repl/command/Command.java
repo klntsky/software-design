@@ -9,26 +9,19 @@ import java.util.List;
 /*
     Абстрактный класс, представляющий общий интерфейс для команд шелла.
  */
-public abstract class Command {
+public abstract class Command implements CommandExecutable {
     private final List<String> arguments;
 
     public Command(List<String> arguments) {
         this.arguments = arguments;
     }
-
-
-    /*
-        Абстрактный метод для запуска команды. Переопределяется в наследниках
-     */
-    public abstract void execute(InputStream input, OutputStream output) throws IOException;
-
+    
     public List<String> getArguments() {
         return arguments;
     }
 
     @Override
     public String toString() {
-
         return this.getClass() + "{" +
                 "arguments=" + arguments +
                 '}';
