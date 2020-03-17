@@ -54,4 +54,14 @@ public class CommandFactoryImpl extends CommandFactory {
 
     @Override
     public CommandExecutable makeGrepCommand(List<String> arguments) { return new CommandGrep(arguments); }
+
+    @Override
+    public CommandExecutable makeLSCommand(List<String> arguments) {
+        return new CommandLS(arguments);
+    }
+
+    @Override
+    public CommandExecutable makeCDCommand(List<String> arguments) {
+        return new CommandCD(arguments);
+    }
 }
