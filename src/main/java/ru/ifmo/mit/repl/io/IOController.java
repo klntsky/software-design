@@ -1,4 +1,4 @@
-package main.java.ru.ifmo.mit.repl.io;
+package ru.ifmo.mit.repl.io;
 
 import java.io.InputStream;
 import java.io.PrintStream;

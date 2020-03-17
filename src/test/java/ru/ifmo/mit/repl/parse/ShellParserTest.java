@@ -1,12 +1,12 @@
-package test.java.ru.ifmo.mit.repl.parse;
+package ru.ifmo.mit.repl.parse;
 
-import main.java.ru.ifmo.mit.repl.command.*;
-import main.java.ru.ifmo.mit.repl.env.Context;
-import main.java.ru.ifmo.mit.repl.env.ShellContext;
-import main.java.ru.ifmo.mit.repl.parse.Lexer;
-import main.java.ru.ifmo.mit.repl.parse.Parser;
-import main.java.ru.ifmo.mit.repl.parse.ShellLexer;
-import main.java.ru.ifmo.mit.repl.parse.ShellParser;
+import ru.ifmo.mit.repl.command.*;
+import ru.ifmo.mit.repl.env.Context;
+import ru.ifmo.mit.repl.env.ShellContext;
+import ru.ifmo.mit.repl.parse.Lexer;
+import ru.ifmo.mit.repl.parse.Parser;
+import ru.ifmo.mit.repl.parse.ShellLexer;
+import ru.ifmo.mit.repl.parse.ShellParser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

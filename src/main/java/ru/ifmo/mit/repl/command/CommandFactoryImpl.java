@@ -1,6 +1,6 @@
-package main.java.ru.ifmo.mit.repl.command;
+package ru.ifmo.mit.repl.command;
 
-import main.java.ru.ifmo.mit.repl.env.Context;
+import ru.ifmo.mit.repl.env.Context;
 
 import java.util.List;
 

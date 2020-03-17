@@ -1,4 +1,4 @@
-package main.java.ru.ifmo.mit.repl.env;
+package ru.ifmo.mit.repl.env;
 
 import java.util.Optional;
 

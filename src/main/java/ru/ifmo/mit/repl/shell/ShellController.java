@@ -1,9 +1,9 @@
-package main.java.ru.ifmo.mit.repl.shell;
+package ru.ifmo.mit.repl.shell;
 
 
-import main.java.ru.ifmo.mit.repl.io.IOController;
-import main.java.ru.ifmo.mit.repl.parse.Lexer;
-import main.java.ru.ifmo.mit.repl.parse.Parser;
+import ru.ifmo.mit.repl.io.IOController;
+import ru.ifmo.mit.repl.parse.Lexer;
+import ru.ifmo.mit.repl.parse.Parser;
 
 import java.io.IOException;
 

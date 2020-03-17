@@ -1,4 +1,4 @@
-package main.java.ru.ifmo.mit.repl.parse.token;
+package ru.ifmo.mit.repl.parse.token;
 
 /*
     Интерфейс, предоставляющий атом строки шелла.

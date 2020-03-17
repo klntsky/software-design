@@ -1,9 +1,9 @@
-package main.java.ru.ifmo.mit.repl.parse;
+package ru.ifmo.mit.repl.parse;
 
-import main.java.ru.ifmo.mit.repl.command.Command;
-import main.java.ru.ifmo.mit.repl.command.CommandExecutable;
-import main.java.ru.ifmo.mit.repl.command.CommandFactory;
-import main.java.ru.ifmo.mit.repl.parse.token.Token;
+import ru.ifmo.mit.repl.command.Command;
+import ru.ifmo.mit.repl.command.CommandExecutable;
+import ru.ifmo.mit.repl.command.CommandFactory;
+import ru.ifmo.mit.repl.parse.token.Token;
 
 import java.util.ArrayList;
 import java.util.List;

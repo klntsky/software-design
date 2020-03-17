@@ -1,4 +1,4 @@
-package main.java.ru.ifmo.mit.repl.command;
+package ru.ifmo.mit.repl.command;
 
 import java.io.IOException;
 import java.io.InputStream;

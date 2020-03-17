@@ -1,6 +1,6 @@
-package main.java.ru.ifmo.mit.repl.parse;
+package ru.ifmo.mit.repl.parse;
 
-import main.java.ru.ifmo.mit.repl.parse.token.Token;
+import ru.ifmo.mit.repl.parse.token.Token;
 
 import java.util.List;
 

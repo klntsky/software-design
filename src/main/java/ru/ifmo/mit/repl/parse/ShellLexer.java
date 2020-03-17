@@ -1,8 +1,8 @@
-package main.java.ru.ifmo.mit.repl.parse;
+package ru.ifmo.mit.repl.parse;
 
-import main.java.ru.ifmo.mit.repl.env.Context;
-import main.java.ru.ifmo.mit.repl.parse.token.ShellToken;
-import main.java.ru.ifmo.mit.repl.parse.token.Token;
+import ru.ifmo.mit.repl.env.Context;
+import ru.ifmo.mit.repl.parse.token.ShellToken;
+import ru.ifmo.mit.repl.parse.token.Token;
 
 import java.util.*;
 import java.util.stream.Collectors;
