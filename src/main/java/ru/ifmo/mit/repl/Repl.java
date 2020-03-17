@@ -11,6 +11,7 @@ import ru.ifmo.mit.repl.parse.ShellLexer;
 import ru.ifmo.mit.repl.parse.ShellParser;
 import ru.ifmo.mit.repl.shell.Controller;
 import ru.ifmo.mit.repl.shell.ShellController;
+import java.io.*;
 
 public final class Repl {
     public static void main(String[] args) {
@@ -18,8 +19,8 @@ public final class Repl {
         CommandFactory commandFactory = new CommandFactoryImpl(context);
         Parser parser = new ShellParser(commandFactory);
         Lexer lexer = new ShellLexer(context);
-        var input = System.in;
-        var printStream = System.out;
+        InputStream input = System.in;
+        PrintStream printStream = System.out;
         IOController ioController = new IOController(input, printStream);
         Controller controller = new ShellController(ioController, parser, lexer);
 

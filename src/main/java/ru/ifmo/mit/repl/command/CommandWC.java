@@ -33,7 +33,7 @@ public class CommandWC extends Command {
         if (getArguments().isEmpty()) {
             executeWithoutArgument(input, output);
         } else {
-            for (var argument : getArguments()) {
+            for (String argument : getArguments()) {
                 executeWithoutArgument(new FileInputStream(new File(argument)), output);
             }
         }

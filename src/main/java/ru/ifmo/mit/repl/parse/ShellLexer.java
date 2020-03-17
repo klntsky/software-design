@@ -57,7 +57,7 @@ public final class ShellLexer implements Lexer {
                 continue;
             }
 
-            var token = makeSeparatorTokenIfPossible(character);
+            Optional<Token> token = makeSeparatorTokenIfPossible(character);
 
             if (token.isPresent()) {
                 tokens.add(token.get());
@@ -95,13 +95,13 @@ public final class ShellLexer implements Lexer {
                 } else {
                     if (isLastTokenSubstitution) {
                         if (inSingleQuotes) {
-                            var newToken = new ShellToken(
+                            ShellToken newToken = new ShellToken(
                                     Token.Type.EXPRESSION,
                                     tokens.get(offset - 1).getString() + token.getString());
                             substitutedTokens.add(newToken);
                         } else {
-                            var value = context.getValue(token.getString());
-                            if (value.isEmpty()) {
+                            Optional<String> value = context.getValue(token.getString());
+                            if (!value.isPresent()) {
                                 throw new IllegalArgumentException("Invalid variable name");
                             }
 
@@ -119,7 +119,7 @@ public final class ShellLexer implements Lexer {
     }
 
     private Optional<Token> makeSeparatorTokenIfPossible(char character) {
-        var separatorOptional = Separator.asSeparator(character);
+        Optional<Separator> separatorOptional = Separator.asSeparator(character);
         return separatorOptional.map(s -> new ShellToken(asTokenType(s), String.valueOf(character)));
     }
 

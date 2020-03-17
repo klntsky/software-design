@@ -35,8 +35,8 @@ class ShellParserTest {
 
     @Test
     void parseAssign() {
-        var command = (CommandPipe) parser.parse(lexer.parse("a=b"));
-        var expectedCommand = new CommandPipe(List.of(new CommandAssign(Arrays.asList("a", "b"), context)));
+        CommandPipe command = (CommandPipe) parser.parse(lexer.parse("a=b"));
+        CommandPipe expectedCommand = new CommandPipe(Arrays.asList(new CommandAssign(Arrays.asList("a", "b"), context)));
         assertEquals(expectedCommand.getCommands().size(), command.getCommands().size());
         for (int i = 0; i < expectedCommand.getCommands().size(); i++) {
             assertEquals(expectedCommand.getCommands().get(i).toString(), command.getCommands().get(i).toString());
@@ -46,7 +46,7 @@ class ShellParserTest {
 
     @Test
     void parsePipeDoubleQuotes() {
-        var command = parser.parse(lexer.parse("echo \"hello $expr\" | wc"));
+        CommandExecutable command = parser.parse(lexer.parse("echo \"hello $expr\" | wc"));
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         assertDoesNotThrow(() -> {
             command.execute(System.in, stream);
@@ -58,7 +58,7 @@ class ShellParserTest {
 
     @Test
     void parsePipeSingleQuotes() {
-        var command = parser.parse(lexer.parse("echo 'hello $expr' | wc"));
+        CommandExecutable command = parser.parse(lexer.parse("echo 'hello $expr' | wc"));
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         assertDoesNotThrow(() -> {
             command.execute(System.in, stream);

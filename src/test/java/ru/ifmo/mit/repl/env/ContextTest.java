@@ -17,18 +17,18 @@ class ContextTest {
 
     @Test
     void testAssignNewVar() {
-        assertTrue(context.getValue("x").isEmpty());
+        assertFalse(context.getValue("x").isPresent());
         context.add("x", "y");
         assertEquals("y", context.getValue("x").get());
         context.add("xx", "ab12");
         assertEquals("ab12", context.getValue("xx").get());
-        assertTrue(context.getValue("qwerty").isEmpty());
+        assertFalse(context.getValue("qwerty").isPresent());
     }
 
 
     @Test
     void testReassignVariable() {
-        assertTrue(context.getValue("x").isEmpty());
+        assertFalse(context.getValue("x").isPresent());
         context.add("x", "y");
         assertEquals("y", context.getValue("x").get());
         context.add("x", "ab12");

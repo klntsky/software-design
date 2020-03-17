@@ -2,10 +2,14 @@ package ru.ifmo.mit.repl.shell;
 
 
 import ru.ifmo.mit.repl.io.IOController;
+import ru.ifmo.mit.repl.command.CommandExecutable;
 import ru.ifmo.mit.repl.parse.Lexer;
 import ru.ifmo.mit.repl.parse.Parser;
+import ru.ifmo.mit.repl.parse.token.Token;
 
 import java.io.IOException;
+import java.util.Optional;
+import java.util.List;
 
 public class ShellController implements Controller {
     private final static String PROMPT = "> ";
@@ -23,11 +27,11 @@ public class ShellController implements Controller {
     @Override
     public void start() {
         ioController.print(PROMPT);
-        var line = ioController.readLine();
+        Optional<String> line = ioController.readLine();
         while (line.isPresent()) {
-            var tokens = lexer.parse(line.get());
+            List<Token> tokens = lexer.parse(line.get());
             try {
-                var command = parser.parse(tokens);
+                CommandExecutable command = parser.parse(tokens);
                 command.execute(ioController.getInputStream(), ioController.getOutputStream());
             } catch (Exception e) {
                 ioController.println(e.getLocalizedMessage());

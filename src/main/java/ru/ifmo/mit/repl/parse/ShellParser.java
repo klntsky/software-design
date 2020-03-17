@@ -47,7 +47,7 @@ public final class ShellParser implements Parser {
     private CommandExecutable parseCommand(List<Token> tokens) {
         Token commandName = tokens.get(currentToken++);
         if (currentToken == tokens.size()) {
-            return commandFactory.makeCommand(commandName.getString(), List.of());
+            return commandFactory.makeCommand(commandName.getString(), new ArrayList());
         } else if (currentToken < tokens.size() && tokens.get(currentToken).getTokenType() == Token.Type.ASSIGNMENT) {
             currentToken++;
             List<String> args = parseArguments(tokens);
@@ -65,7 +65,7 @@ public final class ShellParser implements Parser {
         List<CommandExecutable> commands = new ArrayList<>();
 
         while (currentToken < tokens.size()) {
-            var command = parseCommand(tokens);
+            CommandExecutable command = parseCommand(tokens);
 
             if (currentToken < tokens.size() && tokens.get(currentToken).getTokenType() == Token.Type.PIPE)
                 currentToken++;

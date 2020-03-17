@@ -20,8 +20,8 @@ public class CommandAssign extends Command {
 
     @Override
     public void execute(InputStream input, OutputStream output) throws IOException {
-        var lvalue = getArguments().get(0);
-        var rvalue = getArguments().get(1);
+        String lvalue = getArguments().get(0);
+        String rvalue = getArguments().get(1);
         context.add(lvalue, rvalue);
     }
 }

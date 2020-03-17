@@ -27,7 +27,7 @@ public class CommandCat extends Command {
         if (getArguments().isEmpty()) {
             executeWithoutArguments(input, output);
         } else {
-            for (var argument : getArguments()) {
+            for (String argument : getArguments()) {
                 executeWithoutArguments(new FileInputStream(new File(argument)), output);
             }
         }

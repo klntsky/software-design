@@ -13,7 +13,7 @@ public class CommandPWD extends Command {
 
     @Override
     public void execute(InputStream input, OutputStream output) throws IOException {
-        var writer = new PrintWriter(output);
+        PrintWriter writer = new PrintWriter(output);
         writer.println(System.getProperty("user.dir"));
         writer.flush();
     }

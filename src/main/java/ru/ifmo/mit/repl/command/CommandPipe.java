@@ -2,6 +2,7 @@ package ru.ifmo.mit.repl.command;
 
 import java.io.*;
 import java.util.List;
+import java.util.Arrays;
 
 /*
     Класс, представляющий команду неименнованного канала.
@@ -10,7 +11,7 @@ public class CommandPipe extends Command {
     private final List<CommandExecutable> commands;
 
     public CommandPipe(List<CommandExecutable> commands) {
-        super(List.of());
+        super(Arrays.asList());
         this.commands = commands;
     }
 

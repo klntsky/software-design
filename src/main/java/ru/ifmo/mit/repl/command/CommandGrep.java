@@ -39,7 +39,8 @@ public class CommandGrep implements CommandExecutable {
 
     public CommandGrep(List<String> cliArgs) {
         arguments = new Argument();
-        new CommandLine(arguments).parseArgs(cliArgs.toArray(String[]::new));
+        String[] args = cliArgs.toArray(new String[0]);
+        new CommandLine(arguments).parseArgs(args);
     }
 
     @Override
@@ -56,15 +57,15 @@ public class CommandGrep implements CommandExecutable {
     }
 
     private void executeFromStream(InputStream input, OutputStream output) throws IOException {
-        final var flags = getFlags(arguments);
-        final var regex = getRegex(arguments);
-        var pattern = Pattern.compile(regex, flags);
+        final int flags = getFlags(arguments);
+        final String regex = getRegex(arguments);
+        Pattern pattern = Pattern.compile(regex, flags);
         Scanner scanner = new Scanner(input);
         PrintWriter writer = new PrintWriter(output);
 
         while (scanner.hasNextLine()) {
-            var string = scanner.nextLine();
-            var matcher = pattern.matcher(string);
+            String string = scanner.nextLine();
+            Matcher matcher = pattern.matcher(string);
             if (!matcher.find()) {
                 continue;
             }
