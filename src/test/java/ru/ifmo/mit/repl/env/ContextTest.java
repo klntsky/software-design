@@ -1,7 +1,5 @@
 package ru.ifmo.mit.repl.env;
 
-import ru.ifmo.mit.repl.env.Context;
-import ru.ifmo.mit.repl.env.ShellContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

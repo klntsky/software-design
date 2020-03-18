@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 /*
     Класс, представляющий команду вывода содержимого из потока ввода.
+    Может принимать от 0 аргументов.
  */
 public class CommandCat extends Command {
     public CommandCat(List<String> arguments) {
@@ -20,6 +21,7 @@ public class CommandCat extends Command {
             String line = scanner.nextLine();
             writer.println(line);
         }
+        writer.flush();
     }
 
     @Override

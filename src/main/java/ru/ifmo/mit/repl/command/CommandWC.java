@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /*
     Класс, представляющий команду вывода количество строк, слов и байтов в строковом представлении аргументов.
+    Аргументы: либо 1 аргумент-файл, либо 0 аргументов.
  */
 public class CommandWC extends Command {
     public CommandWC(List<String> arguments) {

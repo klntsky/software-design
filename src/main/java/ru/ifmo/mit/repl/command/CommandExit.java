@@ -7,6 +7,7 @@ import java.util.List;
 
 /*
     Класс, представляющий команду завершения работы шелла.
+    Закрывает все  IO потоки.
  */
 public class CommandExit extends Command {
     public CommandExit(List<String> arguments) {
