@@ -5,6 +5,7 @@ import java.util.List;
 
 /*
     Класс, представляющий команду вывода на экран своих аргументов.
+    Выводит все свои аргументы.
  */
 public class CommandEcho extends Command {
     public CommandEcho(List<String> arguments) {
